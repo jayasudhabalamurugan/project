@@ -1,0 +1,28 @@
+/* src/App.css - minimal */
+.app-root { font-family: Arial, Helvetica, sans-serif; color:#222; }
+.app-header { display:flex; gap:12px; align-items:center; padding:18px; background:#fff; border-bottom:1px solid #eee; }
+.brand { font-weight:700; color:#b3412a; font-size:20px; margin-right:12px; }
+.search-bar { flex:1; padding:10px 14px; border-radius:8px; border:1px solid #eee; background:#fafafa; }
+.add-btn { background:#f07f4a; color:#fff; padding:8px 12px; border-radius:8px; border:none; cursor:pointer; }
+
+.tabs-row { display:flex; gap:12px; padding:14px; justify-content:flex-start; }
+.tab { padding:8px 12px; border-radius:20px; border:1px solid #eee; background:#fff; cursor:pointer; }
+.tab-active { background:#f7a172; color:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.05); }
+
+.container { padding:20px; }
+.recipes-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:20px; }
+.recipe-card { background:#fff; border-radius:10px; padding:0; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.03); }
+.img-wrap { position:relative; height:180px; overflow:hidden; }
+.recipe-img { width:100%; height:100%; object-fit:cover; display:block; }
+.title-overlay { position:absolute; left:12px; bottom:12px; color:white; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+.title-text { font-size:20px; display:block; }
+.card-body { padding:16px; }
+.actions { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.btn { padding:10px 14px; border-radius:10px; border:1px solid #eee; background:#fff; cursor:pointer; }
+.btn-cta { background:#f17748; color:white; border:none; }
+.btn-outline { background:#fff; }
+
+.details-grid { display:flex; gap:18px; }
+.details-grid ul, .details-grid ol { margin:0; padding-left:20px; }
+.heart-overlay { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); opacity:0; transition:opacity .2s; }
+.heart-overlay.show { opacity:1; }

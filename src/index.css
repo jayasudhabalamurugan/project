@@ -1,0 +1,95 @@
+:root{
+  --container: 1100px;
+  --accent: #ff7a48;
+  --muted: #666;
+  --card-radius: 12px;
+}
+
+/* page */
+*{box-sizing:border-box}
+body{font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:#fafafa; color:#222;}
+.container{max-width:var(--container); margin:0 auto; padding:12px 18px;}
+
+/* header */
+.app-header{background:#fff; border-bottom:1px solid #eee;}
+.header-inner{display:flex; gap:12px; align-items:center; padding:18px 0;}
+.brand{font-size:20px; color:#444; margin-right:10px;}
+.search-bar{flex:1; padding:10px 14px; border-radius:10px; border:1px solid #e6e6e6; background:#fafafa;}
+.add-btn{background:linear-gradient(180deg,var(--accent),#d95f32); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer;}
+
+/* tabs */
+.tabs-row{display:flex; gap:12px; padding:12px 0; justify-content:center;}
+.tab{background:#fff; border:1px solid #eee; padding:8px 14px; border-radius:20px; cursor:pointer;}
+.tab-active{background:var(--accent); color:#fff; border:none;}
+
+/* grid */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 18px;
+}
+
+/* card */
+.recipe-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 20px rgba(30,30,30,0.04);
+  overflow: hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* image container fixed ratio */
+.recipe-img-container {
+  width:100%;
+  aspect-ratio: 16/10; /* uniform shape */
+  background:#f3f3f3;
+  overflow:hidden;
+  position:relative;
+}
+.recipe-img {
+  width:100%;
+  height:100%;
+  object-fit:cover; /* IMPORTANT */
+  display:block;
+}
+
+/* title overlay bottom-left */
+.title-overlay {
+  position:absolute;
+  left:14px;
+  bottom:12px;
+  z-index:2;
+  color:#fff;
+  text-shadow:0 4px 12px rgba(0,0,0,0.6);
+}
+.title-text{font-size:18px; display:block; max-width:80%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.meta{font-size:12px; opacity:0.9}
+
+/* card body */
+.card-body{padding:12px 14px 18px; display:flex; flex-direction:column; gap:10px;}
+.actions{display:flex; align-items:center; gap:10px;}
+.btn{padding:8px 10px; border-radius:8px; border:1px solid #e6e6e6; background:#fff; cursor:pointer;}
+.btn-cta{background:var(--accent); color:#fff; border:none;}
+.btn-outline{background:#fff;}
+
+/* expand area (hidden by default) */
+.expand-area{max-height:0; overflow:hidden; transition: all 260ms ease;}
+.expand-area.open{max-height:900px;}
+
+/* details grid inside expanded area */
+.details-grid{display:flex; gap:20px; padding-top:8px; flex-wrap:wrap;}
+.details-grid h4{margin:0 0 6px 0}
+.details-grid ul, .details-grid ol{margin:0; padding-left:18px}
+
+/* heart overlay animation (on double-tap like) */
+.heart-overlay{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) scale(0.8); opacity:0; pointer-events:none; transition:all 220ms;}
+.heart-overlay.show{opacity:1; transform:translate(-50%,-50%) scale(1);}
+
+/* modal styles */
+.modal-backdrop{position:fixed; inset:0; background:rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; z-index:50;}
+.modal{background:#fff; padding:18px; border-radius:10px; width:760px; max-width:95%;}
+.modal-form label{display:block; margin-bottom:10px;}
+.modal-form input, .modal-form textarea, .modal-form select{width:100%; padding:8px; border-radius:6px; border:1px solid #ddd; margin-top:6px;}
+.modal-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:12px;}
